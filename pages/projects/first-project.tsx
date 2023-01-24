@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { Client } from "@notionhq/client";
+// import { getDatabase } from "../api/get";
+
 const FirstProject = () => {
   return (
     <div>

@@ -1,4 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Client } from "@notionhq/client";
 
@@ -19,7 +19,10 @@ type Row = {
   title: { id: string; title: { text: { content: string } }[] };
 };
 
-export default async function api(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (!notionSecret || !notionDatabaseId)
     throw new Error("Missing notion secret or database id.");
 
@@ -29,12 +32,12 @@ export default async function api(req: NextApiRequest, res: NextApiResponse) {
 
   // @ts-ignore
   const rows = query.results.map((res) => res.properties) as Row[];
+  // console.log(query.results.map((res) => res.id));
   const rowsStructured: rowsStructured = rows.map((row) => ({
     title: row.title.title[0].text.content,
     content: row.content.rich_text[0]?.text?.content,
     github_url: row.github_url.url,
     tags: row.tags.multi_select[0].name,
   }));
-
-  res.status(200).json(JSON.stringify(rowsStructured));
+  res.status(200).json(rowsStructured);
 }
