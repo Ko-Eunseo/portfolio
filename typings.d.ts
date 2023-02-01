@@ -1,7 +1,7 @@
 type rowsStructured = {
   title: string;
   content: string | undefined;
-  github_url: string | null;
+  url: string | null;
   tags: {
     content: string;
   };
