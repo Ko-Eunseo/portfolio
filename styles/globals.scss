@@ -1,0 +1,55 @@
+@import "variables.module.scss";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #f6f6f6;
+  background-color: $white-color;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: $black-color;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+//font-size
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
+h4 {
+  font-size: 1.4rem;
+}
+section {
+  line-height: 150%;
+}
+p {
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

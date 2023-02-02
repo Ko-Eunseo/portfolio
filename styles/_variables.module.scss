@@ -1,0 +1,15 @@
+$white-color: #f6f6f6;
+$black-color: #333435;
+$blue-color: #171e71;
+$red-color: #cb5917;
+$yellow-color: #fbde8b;
+$light-gray: #eff1f6;
+
+:export {
+  white: $white-color;
+  black: $black-color;
+  blue: $blue-color;
+  red: $red-color;
+  yellow: $yellow-color;
+  lightGray: $light-gray;
+}
