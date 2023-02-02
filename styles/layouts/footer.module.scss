@@ -1,0 +1,48 @@
+@import "variables.module.scss";
+@import "_mixins.scss";
+
+//footer
+.footer {
+  display: flex;
+  justify-content: center;
+  min-height: 300px;
+  background-color: $black-color;
+  &_title {
+    padding: 1rem;
+    writing-mode: vertical-lr;
+  }
+  &_contents {
+    display: flex;
+    margin: 1rem 1rem 5rem;
+    @include border {
+      border-color: $white-color;
+      border-top: 0;
+      border-right: 0;
+    }
+    @include for-mobile {
+      flex-direction: column;
+    }
+  }
+  &_paragraph {
+    flex: 2;
+    min-width: 50vw;
+    padding: 1rem;
+    border-right: 1px solid $white-color;
+    color: $white-color;
+    @include for-mobile {
+      border-right: 2px solid $white-color;
+    }
+  }
+  &_address {
+    flex: 1;
+    padding: 1rem;
+    @include for-mobile {
+      border-left: 2px solid $white-color;
+      margin-left: 1rem;
+    }
+    &_item {
+      color: $white-color;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
