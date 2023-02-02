@@ -1,0 +1,57 @@
+@import "variables.module.scss";
+@import "_mixins.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  min-width: 90vw;
+  max-width: 20vw;
+  height: 58px;
+  margin: 0.5rem auto;
+  outline: 1px solid $black-color;
+  background-color: $white-color;
+  z-index: 20;
+  @include for-tablet {
+    min-width: 480px;
+  }
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+  }
+}
+.logo {
+  font-size: 1.2rem;
+}
+.gnb {
+  &_btn {
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+  }
+  &_wrapper {
+    display: none;
+    flex-direction: column;
+    padding: 20px 40px 40px;
+    background-color: $red-color;
+    transition: width 0.25s ease;
+  }
+  &_item {
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      font-style: italic;
+    }
+  }
+}
+.menu_is_active {
+  outline: 0;
+  background-color: $red-color;
+  color: #ffffff;
+}
+//common에 있는데 우선순위에서 밀리는지 작동되지 않아 여기에도 둠.
+.is_open {
+  display: flex;
+}

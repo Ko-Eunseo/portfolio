@@ -1,30 +1,25 @@
-import Link from "next/link";
-import useSWR from "swr";
-
-type HeaderProps = {
-  children: React.ReactNode;
-};
+import Gnb from "../modules/gnb";
+import Logo from "../atoms/logo";
+import styles from "@/styles/layouts/header.module.scss";
+import useToggle from "@/hooks/useToogle";
 
 const Header = () => {
-  // const { data } = useSWR(URL);
-  // const tags = data?.map((content: { tags: any }) => {
-  //   return content.tags;
-  // });
-  // const subjects = [...new Set(tags)];
+  const [isOpen, setToggle] = useToggle(false);
+  const toggleNav = () => {
+    setToggle();
+  };
   return (
     <>
-      <header>
-        <div>
-          {/* {subjects.map((subject, i) => {
-            return (
-              <ul key={i}>
-                <li>
-                  <Link href={`#${subject}`}>{subject}</Link>
-                </li>
-              </ul>
-            );
-          })} */}
+      <header
+        className={`${styles.header} ${isOpen ? styles.menu_is_active : ""}`}
+      >
+        <div className={styles.header_title}>
+          <Logo />
+          <button className={`${styles.gnb_btn}`} onClick={toggleNav}>
+            {isOpen ? "CLOSE" : "MENU"}
+          </button>
         </div>
+        <Gnb isOpen={isOpen} />
       </header>
     </>
   );
