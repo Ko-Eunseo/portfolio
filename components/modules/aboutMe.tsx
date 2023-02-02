@@ -1,11 +1,12 @@
-import useFilterByTags from "@/hooks/useFilter";
+import { filterByTags } from "@/hooks/filtering";
 import useSWR from "swr";
-import AboutmeItem from "../atoms/aboutMe";
+import Introduce from "./aboutme/introduce";
+import MySkill from "./aboutme/mySkill";
+import MyStrength from "./aboutme/myStrength";
+import Tmi from "./aboutme/tmi";
 
 const AboutMe = () => {
   const { data, isLoading } = useSWR("/api/notion");
-  const tagName = "About me";
-  const abouts = useFilterByTags(data, tagName);
 
   if (isLoading) {
     return <div>loading...</div>;
@@ -13,14 +14,10 @@ const AboutMe = () => {
   return (
     <>
       <article id="AboutMe">
-        <h1>About me</h1>
-        {abouts.map((aboutMeData, i) => (
-          <AboutmeItem
-            key={i}
-            title={aboutMeData.title}
-            content={aboutMeData.content}
-          />
-        ))}
+        <Introduce />
+        <MySkill />
+        <MyStrength />
+        <Tmi />
       </article>
     </>
   );
