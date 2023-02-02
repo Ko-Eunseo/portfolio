@@ -1,29 +1,24 @@
-import useFilterByTags from "@/hooks/useFilter";
-import useSWR from "swr";
-import TeamProjectItem from "../atoms/teamProject";
+import { getData } from "@/pages/api/notionApi";
+import Projects from "./project/projects";
+import common from "@/styles/common/common.module.scss";
+
+// export const getStaticProps = async () => {
+// env를 못읽는 것 같음? props 넘길때 {} 이렇게 분해하지 말고 보낼것
+//   const notionSecret = process.env.NOTION_SECRET as string;
+//   const databaseId = process.env.NOTION_DATABASE_ID as string;
+//   const database = await getData(notionSecret, databaseId);
+//   return {
+//     props: {
+//       posts: database,
+//     },
+//   };
+// };
 
 const Project = () => {
-  const { data, isLoading } = useSWR("/api/notion");
-  const tagName = "Team project";
-  const projects = useFilterByTags(data, tagName);
-
-  if (isLoading) {
-    return <div>loading...</div>;
-  }
   return (
-    <>
-      <article>
-        <h1>Project</h1>
-        {projects.map((project, i) => (
-          <TeamProjectItem
-            key={i}
-            title={project.title}
-            content={project.content}
-            github_url={project.github_url}
-          />
-        ))}
-      </article>
-    </>
+    <article id="project">
+      <Projects />
+    </article>
   );
 };
 

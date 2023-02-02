@@ -1,0 +1,86 @@
+@import "variables.module.scss";
+@import "_mixins.scss";
+
+//project
+.project {
+  margin: 1rem 1rem 10rem;
+  &_title {
+    border-bottom: 1px solid $black-color;
+    font-size: 3rem;
+    padding: 1rem 0;
+  }
+  &_imgs {
+    width: 100%;
+    height: 40vw;
+    @include border {
+      border-right: 0;
+      border-left: 0;
+    }
+    @include for-desktop {
+      height: 500px;
+    }
+  }
+  &_item {
+    position: relative;
+    @include border {
+      border-left: 0;
+      border-top: 0;
+    }
+    display: flex;
+    &_title {
+      margin: 1rem;
+    }
+  }
+  &_left {
+    border: none;
+    @include for-desktop {
+      flex: 8;
+      border-right: 1px solid $black-color;
+    }
+  }
+  &_right {
+    display: flex;
+    justify-content: center;
+    flex: 2;
+    position: absolute;
+    width: 300px;
+    padding: 0 1rem;
+    outline: 1px solid $black-color;
+    bottom: 0;
+    right: 0;
+    @include for-desktop {
+      flex-direction: column;
+      justify-content: normal;
+      position: relative;
+      padding: 1rem;
+    }
+  }
+  &_stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  &_team {
+    padding: 1rem 2rem 0.5rem;
+  }
+  &_content {
+    border-top: 1px solid $black-color;
+    padding: 1rem 2rem 3rem;
+  }
+  &_anchor {
+    display: flex;
+    justify-content: center;
+    margin: 4px;
+    font-size: 1rem;
+    @include for-desktop {
+      justify-content: normal;
+    }
+    &:hover {
+      padding: 0 4px;
+      border-radius: 4px;
+      background-color: $yellow-color;
+      scale: 1.2;
+    }
+  }
+}
