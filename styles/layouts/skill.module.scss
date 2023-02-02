@@ -1,0 +1,96 @@
+@import "variables.module.scss";
+@import "_mixins.scss";
+
+//skill
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 85%;
+  height: 100vh;
+  margin: 5rem auto 5rem;
+  align-items: center;
+  @include for-tablet {
+    max-width: 600px;
+  }
+  &_title {
+    text-align: center;
+    font-size: 3rem;
+    font-style: italic;
+  }
+  &_list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    top: 50%;
+  }
+  &_item {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+.card {
+  width: 80vw;
+  height: 90vw;
+  padding: 1rem;
+  margin: auto;
+  border-radius: 4px;
+  background-color: $white-color;
+  box-shadow: 1px 1px 5px grey;
+  &:nth-of-type(2n) {
+    transform: rotate(-3deg);
+  }
+  &:nth-of-type(2n - 1) {
+    transform: rotate(3deg);
+  }
+  @include for-tablet {
+    max-width: 400px;
+    max-height: 500px;
+  }
+  &_title {
+    padding-bottom: 1rem;
+    text-align: center;
+    @include for-tablet {
+      font-size: 2rem;
+      padding: 2rem;
+    }
+  }
+  &_section {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 4px;
+    background-color: $yellow-color;
+  }
+  &_carouselHandle {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    z-index: 10;
+    @include for-tablet {
+      padding: 20px;
+    }
+    &_button {
+      border: 0;
+      font-size: 36px;
+      background-color: transparent;
+    }
+  }
+}
+.is_carousel_item {
+  position: relative;
+  @for $i from 0 through 6 {
+    &:nth-of-type(#{$i}) {
+      z-index: 10 - $i;
+    }
+  }
+}
+.is_passed_carousel {
+  position: static;
+  z-index: 1 !important;
+}
