@@ -1,0 +1,23 @@
+@import "variables.module.scss";
+@import "_mixins.scss";
+
+.etc {
+  padding: 1rem 1rem 5rem;
+  &_wrap {
+    display: block;
+    @include for-mobile {
+      display: flex;
+    }
+  }
+  &_section {
+    flex: 1;
+    border-left: 1px solid $black-color;
+    padding-left: 1rem;
+  }
+  &_title {
+    font-size: 1.2rem;
+  }
+  &_content {
+    margin: 20px;
+  }
+}
