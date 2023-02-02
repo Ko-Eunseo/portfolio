@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "@/components/templates/layout";
 import About from "./about";
+import React from "react";
 
 export default function Home() {
   // console.log(projects);
@@ -14,34 +15,13 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-      <About />
     </Layout>
   );
 }
-
-// import axios from "axios";
-// export const getStaticProps = async () => {
-//   const notionSecret = process.env.NOTION_SECRET;
-//   const notionDatabaseId = process.env.NOTION_DATABASE_ID;
-//   const options = {
-//     method: "POST",
-//     url: `https://api.notion.com/v1/databases/${notionDatabaseId}/query`,
-//     headers: {
-//       accept: "application/json",
-//       "Notion-Version": "2022-06-28",
-//       "content-type": "application/json",
-//       Authorization: `Bearer ${notionSecret}`,
-//     },
-//     data: { page_size: 100 },
-//   };
-
-//   const res = await axios.request(options);
-//   const projects = res.data.results.map((el: { properties: {} }) => {
-//     return el.properties;
-//   });
-
-//   return {
-//     props: { projects },
-//   };
-// };

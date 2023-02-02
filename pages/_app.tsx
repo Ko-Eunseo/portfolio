@@ -1,6 +1,9 @@
-import fetcher from "@/libs/fetcher";
 import { AppProps } from "next/app";
 import useSWR, { SWRConfig } from "swr";
+import "@/styles/globals.scss";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 function App({ Component, pageProps }: AppProps) {
   return (

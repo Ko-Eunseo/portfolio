@@ -1,11 +1,8 @@
 import Header from "./header";
 import Footer from "./footer";
 import Main from "./main";
-type LayoutProps = {
-  children: React.ReactNode;
-};
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = () => {
   return (
     <div>
       <Header />
