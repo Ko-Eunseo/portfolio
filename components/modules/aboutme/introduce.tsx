@@ -12,7 +12,13 @@ const Introduce = () => {
   return (
     <figure className={styles.intro}>
       <div className={styles.intro_img_wrap}>
-        <Image src={eunseo} alt="eunseo" placeholder="blur" fill />
+        <Image
+          src={eunseo}
+          alt="eunseo"
+          placeholder="blur"
+          fill
+          sizes="(min-width: 480px) 100vw, (min-width:600px) 500px, 500px"
+        />
       </div>
       <figcaption className={styles.intro_contents}>
         <h2 className={`${styles.intro_title} ${common.stroke_title}`}>
