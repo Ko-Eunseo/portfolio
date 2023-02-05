@@ -8,9 +8,24 @@ import {
   faArrowCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { getData } from "@/pages/api/notionApi";
+import Loading from "@/components/atoms/loading";
+import LogoImgs from "@/components/atoms/skillLogo";
 
-const MySkill = () => {
-  const { data } = useSWR("/api/notion");
+export async function getStaticProps() {
+  const notionData = await getData();
+  return {
+    props: {
+      notionData,
+    },
+  };
+}
+
+const MySkill = ({ notionData }: any) => {
+  const { data, isLoading } = useSWR("/api/notion", {
+    initialData: notionData,
+    revalidateOnMount: true,
+  });
   const title = "My skill";
   const skills = filterByTitle(data, title);
   const [cur, setCur] = useState<number>(0);
@@ -44,16 +59,25 @@ const MySkill = () => {
         </button>
       </div>
       <ul className={`${styles.skill_list}`}>
-        {skills.map((skill, i) => (
-          <SkillItem
-            key={i}
-            subtitle={skill.subtitle}
-            content={skill.content}
-            image={skill.image}
-            className={`${i !== cur ? `${styles.is_passed_carousel}` : ""} 
-            `}
-          />
-        ))}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          skills.map((skill, i) => (
+            <SkillItem
+              key={i}
+              subtitle={skill.subtitle}
+              content={skill.content}
+              className={`${i !== cur ? `${styles.is_passed_carousel}` : ""} 
+              `}
+              image={skill.subtitle}
+            ></SkillItem>
+          ))
+        )}
+        {skills ? (
+          <span className={styles.skill_page}>
+            {cur + 1} / {skills.length}
+          </span>
+        ) : null}
       </ul>
     </div>
   );
