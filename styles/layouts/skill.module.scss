@@ -89,13 +89,13 @@
       left: 0;
       width: 100%;
       border-radius: 40px 0 0 0;
-      background-color: orange;
+      background-color: $light-gray;
       transform: translateY(100%);
       transition: 0.2s ease-in-out;
     }
     &_header {
       border-radius: 40px 0 0 0;
-      background-color: orange;
+      background-color: $light-gray;
       transform: translateY(-100%);
       transition: 0.2s ease-in-out;
     }
