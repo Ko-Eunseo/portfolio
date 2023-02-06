@@ -13,7 +13,7 @@ export default async function handler(
   if (!notionSecret || !notionDatabaseId)
     throw new Error("Missing notion secret or database id.");
 
-  const query = await getData(notionSecret, notionDatabaseId);
+  const query = await getData();
   // @ts-ignore
   const rows = query.results.map((res) => res.properties) as NotionDataRow[];
   const rowsStructured: rowsStructured = rows.map((row) => ({
