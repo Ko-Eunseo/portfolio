@@ -12,9 +12,11 @@ const Tmi = () => {
   return (
     <div className={styles.tmi}>
       <h2 className={`${styles.tmi_title} ${common.stroke_title}`}>TMI</h2>
-      {tmis.map((tmi, i) => (
-        <Accordion key={i} subtitle={tmi.subtitle} content={tmi.content} />
-      ))}
+      {tmis
+        ? tmis.map((tmi, i) => (
+            <Accordion key={i} subtitle={tmi.subtitle} content={tmi.content} />
+          ))
+        : null}
     </div>
   );
 };

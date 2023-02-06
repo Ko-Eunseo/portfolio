@@ -7,7 +7,7 @@ import Tab from "@/components/atoms/tab";
 import { useState } from "react";
 
 const SwEducation = () => {
-  const { data, isLoading } = useSWR("/api/notion");
+  const { data } = useSWR("/api/notion");
   const EduDetails = filterByTags(data, "Education");
   const [curTab, setCurTab] = useState(0);
   const selectTab = (i: number) => {

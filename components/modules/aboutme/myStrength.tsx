@@ -2,6 +2,7 @@ import { filterByTitle } from "@/hooks/filtering";
 import useSWR from "swr";
 import style from "@/styles/layouts/strength.module.scss";
 import common from "@/styles/common/common.module.scss";
+import Loading from "@/components/atoms/loading";
 
 const MyStrength = () => {
   const { data } = useSWR("/api/notion");
@@ -14,12 +15,14 @@ const MyStrength = () => {
         My Strength
       </h2>
       <div className={`${style.strength_contents}`}>
-        {strengths.map((strength, i) => (
-          <div key={i} className={style.strength_content}>
-            <span className={common.round_btn}>{strength.subtitle}</span>
-            <p className={style.strength_paragraph}>{strength.content}</p>
-          </div>
-        ))}
+        {strengths
+          ? strengths.map((strength, i) => (
+              <div key={i} className={style.strength_content}>
+                <span className={common.round_btn}>{strength.subtitle}</span>
+                <p className={style.strength_paragraph}>{strength.content}</p>
+              </div>
+            ))
+          : null}
       </div>
     </div>
   );

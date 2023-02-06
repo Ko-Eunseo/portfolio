@@ -9,8 +9,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { getData } from "@/pages/api/notionApi";
-import Loading from "@/components/atoms/loading";
-import LogoImgs from "@/components/atoms/skillLogo";
 
 export async function getStaticProps() {
   const notionData = await getData();
@@ -22,7 +20,7 @@ export async function getStaticProps() {
 }
 
 const MySkill = ({ notionData }: any) => {
-  const { data, isLoading } = useSWR("/api/notion", {
+  const { data } = useSWR("/api/notion", {
     initialData: notionData,
     revalidateOnMount: true,
   });
@@ -59,20 +57,18 @@ const MySkill = ({ notionData }: any) => {
         </button>
       </div>
       <ul className={`${styles.skill_list}`}>
-        {isLoading ? (
-          <Loading />
-        ) : (
-          skills.map((skill, i) => (
-            <SkillItem
-              key={i}
-              subtitle={skill.subtitle}
-              content={skill.content}
-              className={`${i !== cur ? `${styles.is_passed_carousel}` : ""} 
+        {skills
+          ? skills.map((skill, i) => (
+              <SkillItem
+                key={i}
+                subtitle={skill.subtitle}
+                content={skill.content}
+                className={`${i !== cur ? `${styles.is_passed_carousel}` : ""} 
               `}
-              image={skill.subtitle}
-            ></SkillItem>
-          ))
-        )}
+                image={skill.subtitle}
+              ></SkillItem>
+            ))
+          : null}
         {skills ? (
           <span className={styles.skill_page}>
             {cur + 1} / {skills.length}
