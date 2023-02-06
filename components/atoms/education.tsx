@@ -15,7 +15,7 @@ const EducationItem = (data: ItemProps) => {
         >
           {title}
         </h3>
-        <span className={styles.edu_board_span}>{period}</span>
+        <span className={common.period}>{period}</span>
         <h4 className={styles.edu_board_subtitle}>{subtitle}</h4>
         <section className={styles.edu_board_content}>{content}</section>
       </div>
