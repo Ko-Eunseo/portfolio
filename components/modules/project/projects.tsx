@@ -3,6 +3,14 @@ import useSWR from "swr";
 import ProjectItem from "../../atoms/projectItem";
 import common from "@/styles/common/common.module.scss";
 import styles from "@/styles/layouts/project.module.scss";
+import Loading from "@/components/atoms/loading";
+import { Suspense } from "react";
+import { getData } from "@/pages/api/notionApi";
+
+// export async function getStaticProps() {
+//   const result = await getData();
+//   return { props: { result } };
+// }
 
 const Projects = () => {
   const { data, isLoading } = useSWR("/api/notion");
@@ -10,7 +18,7 @@ const Projects = () => {
   const projects = filterByTags(data, tagName);
 
   if (isLoading) {
-    return <div>loading...</div>;
+    return <Loading />;
   }
   return (
     <>
@@ -18,18 +26,20 @@ const Projects = () => {
         <h1 className={`${styles.project_title} ${common.stroke_title}`}>
           Project
         </h1>
-        {projects.map((project, i) => (
-          <ProjectItem
-            key={i}
-            title={project.title}
-            content={project.content}
-            url={project.url}
-            subtitle={project.subtitle}
-            period={project.period}
-            subContent={project.subContent}
-            team={project.team}
-          />
-        ))}
+        <Suspense fallback={<Loading />}>
+          {projects.map((project, i) => (
+            <ProjectItem
+              key={i}
+              title={project.title}
+              content={project.content}
+              url={project.url}
+              subtitle={project.subtitle}
+              period={project.period}
+              subContent={project.subContent}
+              team={project.team}
+            />
+          ))}
+        </Suspense>
       </article>
     </>
   );

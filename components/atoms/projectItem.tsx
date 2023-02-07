@@ -6,6 +6,8 @@ import { faGithub, faFigma } from "@fortawesome/free-brands-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { splitBy } from "@/hooks/filtering";
+import ProjectImg from "./projectImg";
+
 const ProjectItem = ({
   title,
   content,
@@ -30,7 +32,9 @@ const ProjectItem = ({
         <h2 className={styles.project_item_title}>{title}</h2>
         <figure>
           {/* imgs */}
-          <div className={styles.project_imgs}></div>
+          <div className={styles.project_imgs}>
+            <ProjectImg projectName={title} />
+          </div>
           <figcaption>
             <div className={styles.project_stack}>
               {stacks?.map((stack, id) => (
