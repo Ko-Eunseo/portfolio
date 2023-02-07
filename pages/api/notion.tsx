@@ -24,7 +24,6 @@ export default async function handler(
     url: row.url.url,
     tags: row.tags.multi_select[0].name,
     period: row.period.rich_text[0]?.text?.content,
-    // image: row.image.rich_text[0]?.text?.content,
     team: row.team.rich_text[0]?.text?.content,
   }));
   res.status(200).json(rowsStructured);
