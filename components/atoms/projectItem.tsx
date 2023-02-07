@@ -33,7 +33,7 @@ const ProjectItem = ({
         <figure>
           {/* imgs */}
           <div className={styles.project_imgs}>
-            <ProjectImg projectName={title} />
+            <ProjectImg projectName={title as string} />
           </div>
           <figcaption>
             <div className={styles.project_stack}>
