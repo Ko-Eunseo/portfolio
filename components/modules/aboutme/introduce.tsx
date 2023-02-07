@@ -6,7 +6,7 @@ import styles from "@/styles/layouts/intro.module.scss";
 import common from "@/styles/common/common.module.scss";
 
 const Introduce = () => {
-  const { data, isLoading } = useSWR("/api/notion");
+  const { data } = useSWR("/api/notion");
   const title = "Introduce";
   const intro = filterByTitle(data, title)?.[0];
   return (
@@ -27,7 +27,7 @@ const Introduce = () => {
           <span className={`${common.bold_color}`}>고은서</span>
           입니다.
         </h2>
-        <p>{intro.content}</p>
+        <p>{intro ? intro.content : null}</p>
       </figcaption>
     </figure>
   );
