@@ -13,7 +13,7 @@ const SkillItem = (data: ItemProps): JSX.Element => {
     >
       <section className={styles.card_section}>
         <div className={styles.card_section_bg}>
-          <LogoImgs image={image} />
+          <LogoImgs image={image as string} />
         </div>
         <div className={styles.card_section_overlay}>
           <div className={styles.card_section_header}>
