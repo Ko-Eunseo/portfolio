@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Eunseo&apos;s Portfolio</title>
         <meta
@@ -21,6 +21,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-    </Layout>
+      <Layout />
+    </>
   );
 }
