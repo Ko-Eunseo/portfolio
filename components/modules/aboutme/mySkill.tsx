@@ -41,7 +41,14 @@ const MySkill = ({ notionData }: any) => {
 
   return (
     <div className={styles.skill}>
-      <h2 className={`${styles.skill_title}`}>My Skill</h2>
+      <div className={styles.skill_header}>
+        <h2 className={`${styles.skill_title}`}>My Skill</h2>
+        {skills ? (
+          <span className={styles.skill_page}>
+            {cur + 1} / {skills.length}
+          </span>
+        ) : null}
+      </div>
       <div className={styles.card_carouselHandle}>
         <button
           className={styles.card_carouselHandle_button}
@@ -69,11 +76,6 @@ const MySkill = ({ notionData }: any) => {
               ></SkillItem>
             ))
           : null}
-        {skills ? (
-          <span className={styles.skill_page}>
-            {cur + 1} / {skills.length}
-          </span>
-        ) : null}
       </ul>
     </div>
   );
