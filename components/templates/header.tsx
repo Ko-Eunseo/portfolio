@@ -2,6 +2,7 @@ import Gnb from "../modules/gnb";
 import Logo from "../atoms/logo";
 import styles from "@/styles/layouts/header.module.scss";
 import useToggle from "@/hooks/useToogle";
+import Overlay from "../atoms/overlay";
 
 const Header = () => {
   const [isOpen, setToggle] = useToggle(false);
@@ -10,6 +11,7 @@ const Header = () => {
   };
   return (
     <>
+      {isOpen ? <Overlay /> : null}
       <header
         className={`${styles.header} ${isOpen ? styles.menu_is_active : ""}`}
       >

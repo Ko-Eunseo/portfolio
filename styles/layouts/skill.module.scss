@@ -14,6 +14,11 @@
   @include for-tablet {
     max-width: 600px;
   }
+  &_header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
   &_title {
     text-align: center;
     font-size: 3rem;
@@ -30,13 +35,9 @@
     grid-column: 1;
   }
   &_page {
-    position: absolute;
-    left: 50%;
-    bottom: 10%;
-    transform: translate(-50%, -50%);
-    z-index: 11;
-    font-size: 0.9rem;
-    color: #a1a1a1;
+    padding-left: 1rem;
+    font-weight: 100;
+    font-style: italic;
   }
 }
 .card {

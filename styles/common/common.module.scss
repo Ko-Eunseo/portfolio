@@ -115,7 +115,15 @@
 .period {
   font-size: 14px;
 }
-
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
 // [] 오른쪽에서 왼쪽으로 나타나기 애니메이션
 // [] 왼쪽에서 오른쪽으로 나타나기 애니메이션
 // [] 왼쪽에서 오른쪽 방향으로 한글자씩 위아래 한바퀴 도는 애니메이션
