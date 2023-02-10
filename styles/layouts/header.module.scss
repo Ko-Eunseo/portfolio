@@ -6,10 +6,14 @@
   top: 0;
   min-width: 90vw;
   max-width: 20vw;
-  height: 58px;
+  height: 52px;
   margin: 0.5rem auto;
   outline: 1px solid $black-color;
   background-color: $white-color;
+  transition: all 0.2s ease-in;
+  &:hover {
+    box-shadow: 5px 5px $black-color;
+  }
   z-index: 20;
   @include for-tablet {
     min-width: 480px;
@@ -17,14 +21,19 @@
   &_title {
     display: flex;
     justify-content: space-between;
-    padding-top: 0.5rem;
     padding-left: 1rem;
+    outline: 1px solid $black-color;
   }
 }
 .logo {
   font-size: 1.2rem;
 }
 .gnb {
+  outline: 1px solid $black-color;
+  transition: all 0.2s ease-in;
+  &:hover {
+    box-shadow: 5px 5px;
+  }
   &_btn {
     background-color: transparent;
     border: none;
@@ -33,16 +42,17 @@
   &_wrapper {
     display: none;
     flex-direction: column;
-    padding: 20px 40px 40px;
+    padding: 40px 80px;
     background-color: $red-color;
-    transition: width 0.25s ease;
   }
   &_item {
+    position: relative;
+    padding-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 500;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in;
     &:hover {
-      font-style: italic;
+      transform: scale(1.2) skew(10deg);
     }
   }
 }
