@@ -5,7 +5,7 @@ import common from "@/styles/common/common.module.scss";
 const Gnb = ({ isOpen }: { isOpen: boolean }) => {
   const menu = [
     {
-      title: "About me",
+      title: "About Me",
     },
     { title: "Education" },
     {

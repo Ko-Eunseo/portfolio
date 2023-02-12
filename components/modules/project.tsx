@@ -4,7 +4,7 @@ import common from "@/styles/common/common.module.scss";
 
 const Project = () => {
   return (
-    <article id="project">
+    <article id="Project">
       <Projects />
     </article>
   );
