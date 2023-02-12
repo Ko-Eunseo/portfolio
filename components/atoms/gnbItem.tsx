@@ -5,7 +5,7 @@ import { GnbItemProps } from "@/types/types";
 const GnbItem = ({ title }: GnbItemProps) => {
   return (
     <li className={`${styles.gnb_item}`}>
-      <Link href={`/${title}`}>{title}</Link>
+      <Link href={`/#${title}`}>{title}</Link>
     </li>
   );
 };

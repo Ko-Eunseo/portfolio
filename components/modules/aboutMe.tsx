@@ -6,7 +6,7 @@ import Tmi from "./aboutme/tmi";
 const AboutMe = () => {
   return (
     <>
-      <article id="AboutMe">
+      <article id="About Me">
         <Introduce />
         <MySkill />
         <MyStrength />

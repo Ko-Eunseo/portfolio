@@ -5,7 +5,7 @@ import Contact from "../modules/common/contact";
 const Footer = () => {
   return (
     <>
-      <footer className={styles.footer}>
+      <footer id="Contact" className={styles.footer}>
         <h1 className={`${common.stroke_title} ${styles.footer_title}`}>
           Contact Me
         </h1>
