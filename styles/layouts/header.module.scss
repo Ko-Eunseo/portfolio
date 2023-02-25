@@ -3,7 +3,7 @@
 
 .header {
   position: sticky;
-  top: 0;
+  top: 8px;
   min-width: 90vw;
   max-width: 20vw;
   height: 52px;
@@ -29,6 +29,7 @@
   font-size: 1.2rem;
 }
 .gnb {
+  border-top: none;
   outline: 1px solid $black-color;
   transition: all 0.2s ease-in;
   &:hover {
