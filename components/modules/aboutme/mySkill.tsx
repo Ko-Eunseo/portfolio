@@ -51,12 +51,14 @@ const MySkill = ({ notionData }: any) => {
       </div>
       <div className={styles.card_carouselHandle}>
         <button
+          name="before"
           className={styles.card_carouselHandle_button}
           onClick={() => showSlide(-1)}
         >
           <FontAwesomeIcon icon={faArrowCircleLeft} />
         </button>
         <button
+          name="after"
           className={styles.card_carouselHandle_button}
           onClick={() => showSlide(1)}
         >
