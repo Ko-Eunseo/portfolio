@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
 const nextConfig = {
+  i18n: {
+    locales: ["ko"],
+    defaultLocale: "ko",
+  },
   reactStrictMode: true,
   env: {
     BASE_URL: process.env.BASE_URL,
