@@ -1,5 +1,5 @@
 import { getData } from "@/pages/api/notionApi";
-import Projects from "./project/projects";
+import Projects from "./projects";
 import common from "@/styles/common/common.module.scss";
 
 const Project = () => {

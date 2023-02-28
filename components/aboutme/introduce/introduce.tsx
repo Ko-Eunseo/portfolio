@@ -1,4 +1,4 @@
-import { filterByTitle } from "@/hooks/filtering";
+import { filterByTitle } from "@/utils/filtering";
 import Image from "next/image";
 import eunseo from "@/public/images/profile.webp";
 import useSWR from "swr";

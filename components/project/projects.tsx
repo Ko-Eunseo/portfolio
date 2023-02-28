@@ -1,9 +1,9 @@
-import { filterByTags } from "@/hooks/filtering";
+import { filterByTags } from "@/utils/filtering";
 import useSWR from "swr";
-import ProjectItem from "../../atoms/projectItem";
+import ProjectItem from "./projectItem";
 import common from "@/styles/common/common.module.scss";
 import styles from "@/styles/layouts/project.module.scss";
-import Loading from "@/components/atoms/loading";
+import Loading from "@/components/common/loading";
 import { Suspense } from "react";
 import { getData } from "@/pages/api/notionApi";
 

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faFigma } from "@fortawesome/free-brands-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { splitBy } from "@/hooks/filtering";
+import { splitBy } from "@/utils/filtering";
 import ProjectImg from "./projectImg";
 
 const ProjectItem = ({

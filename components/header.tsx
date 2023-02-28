@@ -1,8 +1,8 @@
-import Gnb from "../modules/gnb";
-import Logo from "../atoms/logo";
+import Gnb from "./common/gnb";
+import Logo from "./common/logo";
 import styles from "@/styles/layouts/header.module.scss";
 import useToggle from "@/hooks/useToogle";
-import Overlay from "../atoms/overlay";
+import Overlay from "./common/overlay";
 
 const Header = () => {
   const [isOpen, setToggle] = useToggle(false);

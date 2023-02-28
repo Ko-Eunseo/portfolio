@@ -1,8 +1,7 @@
-import { filterByTitle } from "@/hooks/filtering";
+import { filterByTitle } from "@/utils/filtering";
 import useSWR from "swr";
 import style from "@/styles/layouts/strength.module.scss";
 import common from "@/styles/common/common.module.scss";
-import Loading from "@/components/atoms/loading";
 
 const MyStrength = () => {
   const { data } = useSWR("/api/notion");

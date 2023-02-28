@@ -1,6 +1,6 @@
-import AboutMe from "../modules/aboutMe";
-import Education from "../modules/education";
-import Project from "../modules/project";
+import AboutMe from "./aboutme/aboutMe";
+import Education from "./education/education";
+import Project from "./project/project";
 import common from "@/styles/common/common.module.scss";
 
 const Main = () => {
