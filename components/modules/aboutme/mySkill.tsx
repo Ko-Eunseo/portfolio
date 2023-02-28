@@ -51,15 +51,17 @@ const MySkill = ({ notionData }: any) => {
       </div>
       <div className={styles.card_carouselHandle}>
         <button
-          name="before"
+          aria-label="before"
           className={styles.card_carouselHandle_button}
+          type="button"
           onClick={() => showSlide(-1)}
         >
           <FontAwesomeIcon icon={faArrowCircleLeft} />
         </button>
         <button
-          name="after"
+          aria-label="after"
           className={styles.card_carouselHandle_button}
+          type="button"
           onClick={() => showSlide(1)}
         >
           <FontAwesomeIcon icon={faArrowCircleRight} />

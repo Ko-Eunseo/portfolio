@@ -17,7 +17,7 @@ const Introduce = () => {
           alt="eunseo"
           placeholder="blur"
           fill
-          sizes="(min-width: 480px) 100vw, (min-width:600px) 500px, 500px"
+          sizes="(max-width: 480px) 300px, (max-width:600px) 400px, 400px"
         />
       </div>
       <figcaption className={styles.intro_contents}>
