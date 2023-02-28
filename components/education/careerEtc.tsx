@@ -1,7 +1,7 @@
-import { filterByTitle } from "@/hooks/filtering";
+import { filterByTitle } from "@/utils/filtering";
 import useSWR from "swr";
 import styles from "@/styles/layouts/etc.module.scss";
-import EtcItem from "@/components/atoms/etcItem";
+import EtcItem from "@/components/education/etcItem";
 
 const Etc = () => {
   const { data } = useSWR("/api/notion");

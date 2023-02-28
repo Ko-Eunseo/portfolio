@@ -1,4 +1,4 @@
-import GnbItem from "../atoms/gnbItem";
+import GnbItem from "./gnbItem";
 import styles from "@/styles/layouts/header.module.scss";
 import common from "@/styles/common/common.module.scss";
 

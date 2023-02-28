@@ -1,5 +1,5 @@
-import SwEducation from "./education/swEducation";
-import Etc from "./education/careerEtc";
+import SwEducation from "./swEducation";
+import Etc from "./careerEtc";
 
 const Education = () => {
   return (

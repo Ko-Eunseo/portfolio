@@ -1,9 +1,9 @@
-import EducationItem from "@/components/atoms/education";
-import { filterByTags } from "@/hooks/filtering";
+import EducationItem from "@/components/education/educationItem";
+import { filterByTags } from "@/utils/filtering";
 import useSWR from "swr";
 import common from "@/styles/common/common.module.scss";
 import styles from "@/styles/layouts/education.module.scss";
-import Tab from "@/components/atoms/tab";
+import Tab from "@/components/common/tab";
 import { useState } from "react";
 
 const SwEducation = () => {

@@ -1,7 +1,7 @@
-import { filterByTitle } from "@/hooks/filtering";
+import { filterByTitle } from "@/utils/filtering";
 import useSWR from "swr";
 import styles from "@/styles/layouts/skill.module.scss";
-import SkillItem from "@/components/atoms/skillItem";
+import SkillItem from "@/components/aboutme/mySkill/skillItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowCircleLeft,
