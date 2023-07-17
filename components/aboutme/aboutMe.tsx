@@ -1,7 +1,7 @@
-import Introduce from "./aboutme/introduce";
-import MySkill from "./aboutme/mySkill";
-import MyStrength from "./aboutme/myStrength";
-import Tmi from "./aboutme/tmi";
+import Introduce from "./introduce/introduce";
+import MySkill from "./mySkill/mySkill";
+import MyStrength from "./myStrength/myStrength";
+import Tmi from "./tmi/tmi";
 
 const AboutMe = () => {
   return (

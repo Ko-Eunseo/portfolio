@@ -1,8 +1,8 @@
-import { filterByTitle } from "@/hooks/filtering";
+import { filterByTitle } from "@/utils/filtering";
 import useSWR from "swr";
 import styles from "@/styles/layouts/tmi.module.scss";
 import common from "@/styles/common/common.module.scss";
-import Accordion from "@/components/atoms/accordion";
+import Accordion from "@/components/common/accordion";
 
 const Tmi = () => {
   const { data } = useSWR("/api/notion");

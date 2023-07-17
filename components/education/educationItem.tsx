@@ -1,7 +1,7 @@
 import { ItemProps } from "@/types/types";
 import common from "@/styles/common/common.module.scss";
 import styles from "@/styles/layouts/education.module.scss";
-import { splitBy } from "@/hooks/filtering";
+import { splitBy } from "@/utils/filtering";
 
 const EducationItem = (data: ItemProps) => {
   const { title, content, period, tags, subtitle, subContent } = data;

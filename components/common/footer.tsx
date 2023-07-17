@@ -1,6 +1,6 @@
 import styles from "@/styles/layouts/footer.module.scss";
 import common from "@/styles/common/common.module.scss";
-import Contact from "../modules/common/contact";
+import Contact from "./contact";
 
 const Footer = () => {
   return (
